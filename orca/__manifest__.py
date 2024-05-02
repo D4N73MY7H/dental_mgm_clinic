@@ -1,0 +1,23 @@
+{
+    'name': 'ORCA',
+    'version': '1.0',
+    'summary': 'ORCA Dental Clinic',
+    'author': 'ORCA',
+    'sequence': -100,
+    'description': """ORCA Module""",
+    'category': 'Dental Clinic',
+    'depends': ['base'],
+    'data': [
+        'data/sequence.xml',
+        'security/ir.model.access.csv',
+        'security/res_groups.xml',
+        'views/menu.xml',
+        'views/orca_patient_view.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'assets': {},
+    'license': 'LGPL-3',
+}

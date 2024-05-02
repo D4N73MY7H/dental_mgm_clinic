@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="orca_root" name="Orca" sequence="0" web_icon="orca,static/description/icon.png">
+
+            <menuitem id="orca_inventory" name="Inventory" sequence="20"/>
+            <menuitem id="orca_configuration" name="Configurations" sequence="30"/>
+
+        </menuitem>
+
+    </data>
+</odoo>

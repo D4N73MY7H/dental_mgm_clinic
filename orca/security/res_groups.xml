@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="orca_groups">
+            <field name="name">ORCA</field>
+        </record>
+
+        <record id="orca_admin" model="res.groups">
+            <field name="name">Administrator</field>
+<!--            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+            <field name="category_id" ref="orca_groups"/>
+        </record>
+
+        <record id="orca_doctor" model="res.groups">
+            <field name="name">Doctor</field>
+<!--            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+            <field name="category_id" ref="orca_groups"/>
+        </record>
+
+        <record id="orca_assistant" model="res.groups">
+            <field name="name">Assistant</field>
+<!--            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+            <field name="category_id" ref="orca_groups"/>
+        </record>
+
+        <record id="orca_reception" model="res.groups">
+            <field name="name">Receptionist</field>
+<!--            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+            <field name="category_id" ref="orca_groups"/>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="orca_patient_form_view" model="ir.ui.view">
+            <field name="name">orca_patient_form</field>
+            <field name="model">orca.patient</field>
+            <field name="arch" type="xml">
+                <form string="Patients">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="image" widget="image" class="oe_avatar"/>
+                                <field name="name"/>
+                                <field name="date_of_birth"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                            </group>
+                            <group>
+                                <field name="phone_number"/>
+                                <field name="email"/>
+                                <field name="address"/>
+                                <field name="id_num"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="orca_patient_tree_view" model="ir.ui.view">
+            <field name="name">orca_patient_tree</field>
+            <field name="model">orca.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Patients">
+                    <field name="name"/>
+                    <field name="date_of_birth"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="phone_number"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--        <record id="ModelName_graph_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.ModelName.graph</field>-->
+        <!--            <field name="model">ProjectName.ModelName</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <graph string="ModelTitle">-->
+        <!--                    <field name="example_field"/>-->
+        <!--                    <field name="example_field" type="measure"/>-->
+        <!--                </graph>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record id="ModelName_pivot_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.ModelName.pivot</field>-->
+        <!--            <field name="model">ProjectName.ModelName</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <pivot string="ModelTitle">-->
+        <!--                    <field name="example_field" type="row"/>-->
+        <!--                    <field name="example_field" type="measure"/>-->
+        <!--                </pivot>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="orca_patient_search_view" model="ir.ui.view">
+            <field name="name">orca_patient_search</field>
+            <field name="model">orca.patient</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Name"/>
+                    <field name="phone_number" string="Phone Number"/>
+                    <field name="email" string="E-mail"/>
+                    <searchpanel>
+                        <field name="gender" icon="fa-venus-mars" enable_counter="1" select="multi"/>
+                        <field name="age_group" icon="fa-users" enable_counter="1" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="orca_patient_kanban_view" model="ir.ui.view">
+            <field name="name">orca_patient_kanban</field>
+            <field name="model">orca.patient</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card">
+                                <div class="oe_kanban_content">
+                                    <field name="image" widget="image" class="oe_avatar"/>
+                                    <div class="oe_kanban_details">
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                        <ul>
+                                            <li>ID:
+                                                <field name="id_num"/>
+                                            </li>
+                                            <li>Age:
+                                                <field name="age"/>
+                                            </li>
+                                            <li>Gender:
+                                                <field name="gender"/>
+                                            </li>
+                                            <li>Phone:
+                                                <field name="phone_number"/>
+                                            </li>
+                                            <li>Email:
+                                                <field name="email"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="orca_patient_act_window" model="ir.actions.act_window">
+            <field name="name">Patient</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">orca.patient</field>
+            <field name="view_mode">tree,form,kanban,search</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Patients" id="orca_patients" parent="orca_root" action="orca_patient_act_window" sequence="10"/>
+
+    </data>
+</odoo>
